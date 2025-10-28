@@ -3,6 +3,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 require("dotenv").config();
 const appointmentRoutes = require("./Routes/AppointmentRoutes");
+const concernRoutes = require("./Routes/concernRoutes");
 const cors=require('cors')
 
 const app = express();
@@ -18,7 +19,7 @@ mongoose
   .catch((err) => console.error("❌ MongoDB connection error:", err));
 
 // Routes
-const concernRoutes = require("./routes/concernRoutes");
+
 app.use("/api/concerns", concernRoutes);
 app.use("/api/appointments", appointmentRoutes);
 
